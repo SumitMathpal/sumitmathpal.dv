@@ -1,0 +1,9 @@
+.bar {
+  position: fixed;
+  top: 0; left: 0;
+  height: 2px;
+  background: linear-gradient(to right, var(--accent-blue), var(--accent-green), var(--accent-orange));
+  z-index: 9999;
+  transition: width 0.05s linear;
+  pointer-events: none;
+}

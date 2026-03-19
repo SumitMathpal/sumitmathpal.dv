@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=IBM+Plex+Mono:wght@300;400;500&family=IBM+Plex+Sans:wght@300;400;500&display=swap');
+
+:root {
+  --ink:            #0D1117;
+  --ink2:           #111820;
+  --surface:        #161D28;
+  --border:         rgba(255,255,255,0.07);
+  --text:           #D8E0EC;
+  --muted:          #5E6E85;
+  --subtle:         #2A3545;
+  --accent-blue:    #1A6FD4;
+  --accent-green:   #0E8A5F;
+  --accent-orange:  #C45C1A;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--ink);
+  color: var(--text);
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 400;
+  line-height: 1.8;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: var(--accent-blue);
+}
+a:hover {
+  color: #2B89FF;
+}
+
+.section {
+  padding: 7rem 5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-bottom: 4rem;
+}
+
+.section-num {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  color: var(--accent-orange);
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  color: #EAF0FB;
+  letter-spacing: -0.3px;
+}
+
+.section-rule {
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+  max-width: 160px;
+}
+
+.rule {
+  height: 1px;
+  background: var(--border);
+  margin: 0 5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.btn {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.9rem 2.1rem;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: all 0.25s;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.btn-solid {
+  background: linear-gradient(135deg, #1A6FD4, #2B89FF);
+  color: #fff;
+  border: 1px solid #2B89FF;
+  box-shadow: 0 12px 30px rgba(26, 111, 212, 0.35);
+}
+.btn-solid:hover {
+  background: linear-gradient(135deg, #155bb0, #2774e0);
+  border-color: #2774e0;
+  transform: translateY(-1px);
+  box-shadow: 0 16px 40px rgba(21, 91, 176, 0.45);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+.btn-ghost:hover { border-color: var(--muted); color: #fff; }
+
+/* Reveal animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.in { opacity: 1; transform: translateY(0); }
+.reveal-d1 { transition-delay: 0.1s; }
+.reveal-d2 { transition-delay: 0.2s; }
+.reveal-d3 { transition-delay: 0.3s; }
+
+@keyframes fadeSlide {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 900px) {
+  .section { padding: 5rem 1.5rem; }
+  .rule    { margin: 0 1.5rem; }
+}

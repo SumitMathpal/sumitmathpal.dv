@@ -1,0 +1,98 @@
+.stickyLabel {
+  position: absolute;
+  left: 1rem;
+  top: 7rem;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  color: var(--subtle);
+  text-transform: uppercase;
+  user-select: none;
+  pointer-events: none;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 5fr 4fr;
+  gap: 6rem;
+  align-items: start;
+}
+
+.body p {
+  color: var(--muted);
+  font-size: 0.93rem;
+  line-height: 1.9;
+  margin-bottom: 1.2rem;
+}
+
+.contactBlock { margin-top: 2.5rem; }
+
+.contactTitle {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  color: var(--accent-green);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.65rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.contactItem:last-child { border-bottom: none; }
+
+.contactKey {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--muted);
+  width: 80px;
+  flex-shrink: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.contactVal {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.73rem;
+  color: var(--text);
+}
+.contactVal a { color: var(--accent-blue); text-decoration: none; }
+.contactVal a:hover { color: var(--text); }
+
+/* Education */
+.eduStack { display: flex; flex-direction: column; gap: 1px; }
+
+.eduItem {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 1.6rem 2rem;
+  position: relative;
+  transition: border-color 0.2s;
+}
+.eduItem:hover { border-color: var(--subtle); }
+.eduItem + .eduItem { margin-top: -1px; }
+
+.eduAccent {
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 2px;
+}
+.blue   { background: var(--accent-blue); }
+.green  { background: var(--accent-green); }
+.orange { background: var(--accent-orange); }
+
+.eduDegree { font-size: 0.92rem; color: var(--text); margin-bottom: 0.3rem; }
+.eduSchool { font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem; color: var(--muted); }
+.eduPeriod { font-family: 'IBM Plex Mono', monospace; font-size: 0.68rem; color: var(--accent-orange); margin-top: 0.6rem; }
+
+@media (max-width: 900px) {
+  .grid { grid-template-columns: 1fr; gap: 3rem; }
+  .stickyLabel { display: none; }
+}

@@ -1,0 +1,107 @@
+.stickyLabel {
+  position: absolute; left: 1rem; top: 7rem;
+  writing-mode: vertical-rl; transform: rotate(180deg);
+  font-family: 'IBM Plex Mono', monospace; font-size: 0.6rem;
+  letter-spacing: 0.2em; color: var(--subtle);
+  text-transform: uppercase; user-select: none; pointer-events: none;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+
+.row {
+  background: var(--ink);
+  display: grid;
+  grid-template-columns: 60px 1fr auto;
+  align-items: start;
+  gap: 2.5rem;
+  padding: 2.5rem;
+  position: relative;
+  transition: background 0.2s;
+}
+.row:hover { background: var(--surface); }
+
+/* left accent bar — hidden by default, slides in on hover */
+.accent {
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 2px;
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+.row:hover .accent { opacity: 1; }
+
+.blue   { background: var(--accent-blue);   color: var(--accent-blue); }
+.green  { background: var(--accent-green);  color: var(--accent-green); }
+.orange { background: var(--accent-orange); color: var(--accent-orange); }
+
+.index {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--subtle);
+  line-height: 1;
+  padding-top: 0.2rem;
+}
+
+.stack {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+  /* color comes from .blue / .green / .orange on .stack */
+}
+
+.name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: #EAF0FB;
+  margin-bottom: 0.8rem;
+}
+
+.points {
+  list-style: none;
+}
+.points li {
+  font-size: 0.875rem;
+  color: var(--muted);
+  line-height: 1.7;
+  padding: 0.22rem 0;
+  display: flex;
+  gap: 0.7rem;
+}
+.points li::before {
+  content: '·';
+  color: var(--subtle);
+  flex-shrink: 0;
+}
+
+.linkCol { padding-top: 0.2rem; }
+
+.cta {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  text-decoration: none;
+  text-transform: uppercase;
+  border: 1px solid var(--border);
+  padding: 0.5rem 1rem;
+  display: inline-block;
+  white-space: nowrap;
+  transition: border-color 0.2s, color 0.2s;
+}
+.cta:hover { border-color: var(--muted); color: var(--text); }
+
+@media (max-width: 900px) {
+  .row { grid-template-columns: 40px 1fr; gap: 1.5rem; padding: 1.8rem 1.5rem; }
+  .linkCol { display: none; }
+  .stickyLabel { display: none; }
+}

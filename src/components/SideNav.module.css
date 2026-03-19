@@ -1,0 +1,61 @@
+.sidenav {
+  position: fixed;
+  right: 2.2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 150;
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+  align-items: flex-end;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  opacity: 0;
+  transform: translateX(8px);
+  transition: opacity 0.25s, transform 0.25s, color 0.25s;
+  white-space: nowrap;
+}
+
+.dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  border: 1px solid var(--muted);
+  transition: all 0.3s;
+  flex-shrink: 0;
+}
+
+.item:hover .label,
+.active .label {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.active .dot {
+  background: var(--accent-blue);
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 8px rgba(26, 111, 212, 0.6);
+  width: 7px;
+  height: 7px;
+}
+
+.item:hover .dot { border-color: var(--text); }
+.active .label   { color: var(--accent-blue); }
+
+@media (max-width: 900px) {
+  .sidenav { display: none; }
+}

@@ -1,0 +1,46 @@
+.footer {
+  position: relative;
+  z-index: 1;
+  padding: 4rem 5rem;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: var(--text);
+}
+.brand span { color: var(--accent-blue); }
+
+.nav {
+  display: flex;
+  gap: 2rem;
+}
+.nav a {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+.nav a:hover { color: var(--text); }
+
+.copy {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--muted);
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  .footer { padding: 3rem 1.5rem; flex-direction: column; align-items: flex-start; }
+  .nav { gap: 1.2rem; flex-wrap: wrap; }
+}
