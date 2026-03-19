@@ -46,7 +46,7 @@ Hi, I'm **Sumit Mathpal**
 
 ## 🚀 Live Demo
 
-👉 (comming soon..)
+https://sumitmathpaldv.engineer
 
 ---
 
