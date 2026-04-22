@@ -1,6 +1,6 @@
 import "./index.css";
-import useReveal from "./components/useReveal";
-import ThreeBackground from "./components/ThreeBackground";
+import { useGsapReveal } from "./components/useGsap";
+import CursorGlow from "./components/CursorGlow";
 import ScrollProgress from "./components/ScrollProgress";
 import SideNav from "./components/SideNav";
 import Navbar from "./components/Navbar";
@@ -12,13 +12,13 @@ import Projects from "./components/Projects";
 import Footer from "./components/Footer";
 
 export default function App() {
-  useReveal();
+  useGsapReveal();
 
   return (
     <>
       {/* Global overlays */}
       <ScrollProgress />
-      <ThreeBackground />
+      <CursorGlow />
       <SideNav />
 
       {/* Layout */}

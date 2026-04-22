@@ -1,9 +1,25 @@
-.bar {
+.track {
   position: fixed;
-  top: 0; left: 0;
+  top: 0; left: 0; right: 0;
   height: 2px;
-  background: linear-gradient(to right, var(--accent-blue), var(--accent-green), var(--accent-orange));
-  z-index: 9999;
-  transition: width 0.05s linear;
-  pointer-events: none;
+  background: rgba(255,255,255,0.04);
+  z-index: 200;
+}
+
+.bar {
+  height: 100%;
+  background: linear-gradient(90deg, #1765C8, #2B8BE8, #10C48A);
+  border-radius: 0 2px 2px 0;
+  position: relative;
+  transition: width 0.1s linear;
+}
+
+.glow {
+  position: absolute;
+  right: 0; top: 50%;
+  transform: translateY(-50%);
+  width: 60px; height: 8px;
+  background: linear-gradient(90deg, transparent, rgba(43,139,232,0.8));
+  filter: blur(4px);
+  border-radius: 50%;
 }

@@ -96,11 +96,12 @@ export const skills = [
 ];
 
 export const projects = [
+ 
   {
     index: "01",
     stack: "Streamlit · Scikit-learn · Pandas · NumPy",
     name: "AI-Powered Heart Risk Prediction",
-    color: "blue",
+    color: "green",
     points: [
       "Trained a Logistic Regression model on the UCI heart disease dataset using Scikit-learn",
       "Applied data preprocessing and feature scaling with Pandas and NumPy for improved accuracy",
@@ -113,28 +114,44 @@ export const projects = [
     index: "02",
     stack: "FastAPI · Random Forest · Pandas",
     name: "Loan Approval Prediction Model",
-    color: "green",
+    color: "orange",
     points: [
       "Built a Random Forest classifier pipeline for automated loan approval prediction",
       "Handled missing values, feature encoding, and full preprocessing with Pandas",
       "Evaluated model performance using accuracy metrics and confusion matrix analysis",
     ],
-    link: "https://github.com/SumitMathpal",
+    link: "https://github.com/SumitMathpal/loan_prediction_ml_model",
     linkLabel: "GitHub ↗",
   },
   {
     index: "03",
     stack: "MongoDB · Express.js · React.js · Node.js",
     name: "URL Shortener — MERN Stack",
-    color: "orange",
+    color: "purple",
     points: [
       "Architected a full-stack URL shortener with RESTful APIs and MongoDB persistence",
       "Implemented secure redirection logic and collision-resistant short URL generation",
       "Built a responsive React.js interface with clean UX and optimised load times",
     ],
-    link: "https://github.com/SumitMathpal",
+    link: "https://github.com/SumitMathpal/url-shortener",
     linkLabel: "GitHub ↗",
   },
+  {
+   index: "04",
+    stack: "Machine Learing · Streamlit · Data Processing",
+    name: "Invoice Intelligent System",
+    color: "Blue",
+    points: [
+      "Architected an AI-powered invoice intelligence system for automated freight cost prediction and anomaly detection",
+      "Developed machine learning models using Scikit-learn to classify invoices as safe or suspicious based on transactional patterns",
+      "Implemented data preprocessing and feature scaling pipelines to improve model accuracy and consistency",
+    ],
+    link: "https://github.com/SumitMathpal/Invoice-Intelligent-System",
+    linkLabel: "GitHub ↗",
+    link:"https://invoice-intelligent-system-u5hhf7miswhaoamz3biyze.streamlit.app/",
+    linkLabel:"Live Demo ↗"
+
+  }
 ];
 
 export const navLinks = [

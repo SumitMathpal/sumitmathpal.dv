@@ -23,14 +23,23 @@ export default function SideNav() {
 
   return (
     <div className={styles.sidenav}>
+      {/* Vertical line track */}
+      <div className={styles.track}>
+        <div
+          className={styles.fill}
+          style={{ height: `${(activeIdx / (sideNavItems.length - 1)) * 100}%` }}
+        />
+      </div>
+
       {sideNavItems.map((item, i) => (
         <a
           key={item.label}
           href={item.href}
           className={`${styles.item} ${i === activeIdx ? styles.active : ""}`}
+          title={item.label}
         >
-          <span className={styles.label}>{item.label}</span>
           <span className={styles.dot} />
+          <span className={styles.label}>{item.label}</span>
         </a>
       ))}
     </div>

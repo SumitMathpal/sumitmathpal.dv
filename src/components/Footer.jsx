@@ -6,20 +6,45 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className={styles.footer}>
-      <div className={styles.brand}>
-        Sumit <span>Mathpal</span>
+    <footer className={styles.footer} data-gsap="reveal">
+      {/* Top divider with glow */}
+      <div className={styles.divider} />
+
+      <div className={styles.inner}>
+        <div className={styles.brand}>
+          <span className={styles.brandAccent}>S</span>umit
+          <span className={styles.brandDot}>.</span>
+          <span className={styles.brandSub}>Mathpal</span>
+        </div>
+
+        <div className={styles.tagline}>
+          Engineering Intelligent Systems
+        </div>
+
+        <nav className={styles.links}>
+          {[
+            { label: "GitHub",   href: contact.github,                   external: true },
+            { label: "LinkedIn", href: contact.linkedin,                 external: true },
+            { label: "Email",    href: `mailto:${contact.email}`,        external: false },
+          ].map(({ label, href, external }) => (
+            <a
+              key={label}
+              href={href}
+              className={styles.link}
+              {...(external ? { target: "_blank", rel: "noreferrer" } : {})}
+            >
+              {label}
+            </a>
+          ))}
+        </nav>
       </div>
 
-      <nav className={styles.nav}>
-        <a href={contact.github} target="_blank" rel="noreferrer">GitHub</a>
-        <a href={contact.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
-        <a href={`mailto:${contact.email}`}>Email</a>
-        <a href={`tel:${contact.phone.replace(/\s/g, "")}`}>{contact.phone}</a>
-      </nav>
-
       <div className={styles.copy}>
-        © {year} Sumit Mathpal · Faridabad, Haryana, India
+        <span>© {year} Sumit Mathpal</span>
+        <span className={styles.copyDot}>·</span>
+        <span>Faridabad, Haryana, India</span>
+        <span className={styles.copyDot}>·</span>
+        <span>Built with React &amp; GSAP</span>
       </div>
     </footer>
   );

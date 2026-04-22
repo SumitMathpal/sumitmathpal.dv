@@ -1,98 +1,134 @@
-.stickyLabel {
-  position: absolute;
-  left: 1rem;
-  top: 7rem;
-  writing-mode: vertical-rl;
-  text-orientation: mixed;
-  transform: rotate(180deg);
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.6rem;
-  letter-spacing: 0.2em;
-  color: var(--subtle);
-  text-transform: uppercase;
-  user-select: none;
-  pointer-events: none;
-}
-
 .grid {
   display: grid;
-  grid-template-columns: 5fr 4fr;
-  gap: 6rem;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
   align-items: start;
 }
 
-.body p {
+/* ── Bio / Contact ───────────────────────────── */
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  font-size: 0.97rem;
+  line-height: 1.85;
   color: var(--muted);
-  font-size: 0.93rem;
-  line-height: 1.9;
-  margin-bottom: 1.2rem;
+  opacity: 0;
 }
+.body p { color: var(--muted); }
 
-.contactBlock { margin-top: 2.5rem; }
-
+.contactBlock {
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  border-radius: 16px;
+  background: rgba(43,139,232,0.04);
+  border: 1px solid rgba(43,139,232,0.1);
+}
 .contactTitle {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.65rem;
-  letter-spacing: 0.15em;
-  color: var(--accent-green);
-  text-transform: uppercase;
-  margin-bottom: 1rem;
-}
-
-.contactItem {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  padding: 0.65rem 0;
-  border-bottom: 1px solid var(--border);
-}
-.contactItem:last-child { border-bottom: none; }
-
-.contactKey {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.68rem;
-  color: var(--muted);
-  width: 80px;
-  flex-shrink: 0;
+  gap: 0.5rem;
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  color: var(--text-bright);
+  margin-bottom: 1.2rem;
 }
-
+.contactTitleDot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--accent-blue);
+  box-shadow: 0 0 8px var(--accent-blue);
+}
+.contactGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+.contactItem {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 0.8rem;
+  font-size: 0.85rem;
+}
+.contactKey {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding-top: 0.1rem;
+}
 .contactVal {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.73rem;
   color: var(--text);
 }
-.contactVal a { color: var(--accent-blue); text-decoration: none; }
-.contactVal a:hover { color: var(--text); }
+.contactVal a { color: var(--accent-blue); }
+.contactVal a:hover { color: #5AAEFF; }
 
-/* Education */
-.eduStack { display: flex; flex-direction: column; gap: 1px; }
-
-.eduItem {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  padding: 1.6rem 2rem;
-  position: relative;
-  transition: border-color 0.2s;
+/* ── Education ───────────────────────────────── */
+.eduStack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  opacity: 0;
 }
-.eduItem:hover { border-color: var(--subtle); }
-.eduItem + .eduItem { margin-top: -1px; }
-
-.eduAccent {
+.eduTitle {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-bright);
+  margin-bottom: 0.6rem;
+}
+.eduCard {
+  position: relative;
+  padding: 1.6rem 1.6rem 1.6rem 2rem;
+  overflow: hidden;
+  border-radius: 16px !important;
+}
+.eduAccentBar {
   position: absolute;
   left: 0; top: 0; bottom: 0;
-  width: 2px;
+  width: 3px;
+  border-radius: 3px 0 0 3px;
 }
-.blue   { background: var(--accent-blue); }
-.green  { background: var(--accent-green); }
-.orange { background: var(--accent-orange); }
+.eduAccentBar.blue   { background: linear-gradient(180deg, #1765C8, #2B8BE8); box-shadow: 0 0 12px rgba(43,139,232,0.5); }
+.eduAccentBar.green  { background: linear-gradient(180deg, #0B7A60, #10C48A); box-shadow: 0 0 12px rgba(16,196,138,0.5); }
 
-.eduDegree { font-size: 0.92rem; color: var(--text); margin-bottom: 0.3rem; }
-.eduSchool { font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem; color: var(--muted); }
-.eduPeriod { font-family: 'IBM Plex Mono', monospace; font-size: 0.68rem; color: var(--accent-orange); margin-top: 0.6rem; }
+.eduContent { display: flex; flex-direction: column; gap: 0.4rem; }
+.eduDegree {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--text-bright);
+}
+.eduField {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.eduMeta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+}
+.eduSchool {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+.eduPeriod {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  padding: 0.2rem 0.7rem;
+  border-radius: 999px;
+}
+.blueBadge   { color: var(--accent-blue);  background: rgba(43,139,232,0.1);  border: 1px solid rgba(43,139,232,0.3); }
+.greenBadge  { color: var(--accent-green); background: rgba(16,196,138,0.1);  border: 1px solid rgba(16,196,138,0.3); }
 
 @media (max-width: 900px) {
-  .grid { grid-template-columns: 1fr; gap: 3rem; }
-  .stickyLabel { display: none; }
+  .grid { grid-template-columns: 1fr; gap: 2.5rem; }
 }

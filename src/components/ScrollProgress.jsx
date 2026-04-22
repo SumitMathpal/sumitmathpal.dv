@@ -15,6 +15,10 @@ export default function ScrollProgress() {
   }, []);
 
   return (
-    <div className={styles.bar} style={{ width: `${progress}%` }} />
+    <div className={styles.track}>
+      <div className={styles.bar} style={{ width: `${progress}%` }}>
+        <div className={styles.glow} />
+      </div>
+    </div>
   );
 }
