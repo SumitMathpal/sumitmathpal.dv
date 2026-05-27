@@ -22,43 +22,48 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav
-      ref={navRef}
-      className={`${styles.nav} ${scrolled ? styles.scrolled : ""}`}
-    >
-      <div className={styles.logo}>
-        <span className={styles.logoAccent}>S</span>umit
-        <span className={styles.logoDot}>.</span>
-      </div>
-
-      {/* Desktop links */}
-      <ul className={styles.links}>
-        {navLinks.map((link) => (
-          <li key={link.label}>
-            <a href={link.href} className={styles.link}>
-              {link.label}
-            </a>
-          </li>
-        ))}
-      </ul>
-
-      {/* Mobile hamburger */}
-      <button
-        className={`${styles.burger} ${open ? styles.burgerOpen : ""}`}
-        onClick={() => setOpen((o) => !o)}
-        aria-label="Toggle menu"
+    <>
+      <nav
+        ref={navRef}
+        className={`${styles.nav} ${scrolled ? styles.scrolled : ""}`}
       >
-        <span /><span /><span />
-      </button>
+        <div className={styles.logo}>
+          <span className={styles.logoAccent}>S</span>umit
+          <span className={styles.logoDot}>.</span>
+        </div>
 
-      {/* Mobile drawer */}
+        {/* Desktop links */}
+        <ul className={styles.links}>
+          {navLinks.map((link) => (
+            <li key={link.label}>
+              <a href={link.href} className={styles.link}>
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+
+        {/* Mobile hamburger */}
+        <button
+          className={`${styles.burger} ${open ? styles.burgerOpen : ""}`}
+          onClick={() => setOpen((o) => !o)}
+          aria-label="Toggle menu"
+        >
+          <div className={styles.burgerInner}>
+            <span /><span /><span />
+          </div>
+        </button>
+      </nav>
+
+      {/* Mobile drawer rendered as a sibling to prevent parent transform clipping */}
       {open && (
         <div className={styles.drawer}>
-          {navLinks.map((link) => (
+          {navLinks.map((link, idx) => (
             <a
               key={link.label}
               href={link.href}
               className={styles.drawerLink}
+              style={{ "--i": idx }}
               onClick={() => setOpen(false)}
             >
               {link.label}
@@ -66,6 +71,6 @@ export default function Navbar() {
           ))}
         </div>
       )}
-    </nav>
+    </>
   );
 }

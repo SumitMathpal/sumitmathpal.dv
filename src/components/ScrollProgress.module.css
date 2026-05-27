@@ -2,24 +2,18 @@
   position: fixed;
   top: 0; left: 0; right: 0;
   height: 2px;
-  background: rgba(255,255,255,0.04);
+  background: rgba(255, 255, 255, 0.03);
   z-index: 200;
 }
 
 .bar {
   height: 100%;
-  background: linear-gradient(90deg, #1765C8, #2B8BE8, #10C48A);
-  border-radius: 0 2px 2px 0;
+  background: var(--accent-blue);
+  border-radius: 0 1px 1px 0;
   position: relative;
   transition: width 0.1s linear;
 }
 
 .glow {
-  position: absolute;
-  right: 0; top: 50%;
-  transform: translateY(-50%);
-  width: 60px; height: 8px;
-  background: linear-gradient(90deg, transparent, rgba(43,139,232,0.8));
-  filter: blur(4px);
-  border-radius: 50%;
+  display: none; /* remove unnecessary glowing pulse decoration */
 }

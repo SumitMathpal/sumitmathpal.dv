@@ -14,6 +14,16 @@ export default function About() {
 
       <div className={styles.grid}>
         <div className={styles.body} data-gsap="slide-left">
+          <div className={styles.profileHeader}>
+            <div className={styles.imageContainer}>
+              <img src="/images/profilepic.png" alt={personalInfo.name} className={styles.profileImage} />
+            </div>
+            <div className={styles.profileMeta}>
+              <h3 className={styles.profileName}>{personalInfo.name}</h3>
+              <p className={styles.profileTagline}>{personalInfo.title}</p>
+            </div>
+          </div>
+
           {bio.map((p, i) => (
             <p key={i} dangerouslySetInnerHTML={{ __html: p }} />
           ))}
