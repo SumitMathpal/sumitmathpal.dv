@@ -218,3 +218,31 @@
 @media (max-width: 900px) {
   .grid { grid-template-columns: 1fr; gap: 3rem; }
 }
+
+@media (max-width: 480px) {
+  .contactBlock {
+    padding: 1.2rem 1rem;
+    margin-top: 1rem;
+  }
+  .contactItem {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+    align-items: flex-start;
+  }
+  .contactKey {
+    font-size: 0.65rem;
+  }
+  .contactVal {
+    font-size: 0.82rem;
+    word-break: break-all;
+  }
+  .eduCard {
+    padding: 1.2rem 1rem 1.2rem 1.5rem;
+  }
+  .eduDegree {
+    font-size: 1rem;
+  }
+  .eduField {
+    font-size: 0.82rem;
+  }
+}

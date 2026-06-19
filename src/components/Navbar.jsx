@@ -21,11 +21,23 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
   return (
     <>
       <nav
         ref={navRef}
-        className={`${styles.nav} ${scrolled ? styles.scrolled : ""}`}
+        className={`${styles.nav} ${scrolled ? styles.scrolled : ""} ${open ? styles.navOpen : ""}`}
       >
         <div className={styles.logo}>
           <span className={styles.logoAccent}>S</span>umit

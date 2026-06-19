@@ -14,7 +14,7 @@ export const personalInfo = {
     location: "Faridabad, Haryana, India",
     github: "https://github.com/SumitMathpal",
     linkedin: "https://www.linkedin.com/in/",
-    resume: "/Sumit_Mathpal_CV.pdf",
+    resume: "/sumitmathpal_cv.pdf",
   },
   stats: {
     status: "Available for opportunities",

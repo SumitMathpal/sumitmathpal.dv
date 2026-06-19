@@ -1,7 +1,7 @@
 .nav {
   position: fixed;
   top: 0; left: 0; right: 0;
-  z-index: 100;
+  z-index: 110;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -19,6 +19,14 @@
   padding: 1rem 8rem;
 }
 
+.navOpen {
+  background: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+}
+
 .logo {
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-weight: 700;
@@ -28,6 +36,8 @@
   cursor: default;
   display: flex;
   align-items: center;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 .logoAccent {
   color: var(--accent-blue);

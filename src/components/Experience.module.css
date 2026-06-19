@@ -108,3 +108,11 @@
   .timelineDot { left: 0.95rem; top: 2.2rem; }
   .meta { align-items: flex-start; }
 }
+
+@media (max-width: 480px) {
+  .card { padding: 1.2rem 1rem 1.2rem 1.8rem; }
+  .timeline::before { left: 0.8rem; }
+  .timelineDot { left: 0.58rem; top: 1.6rem; }
+  .role { font-size: 1.05rem; }
+  .points li { font-size: 0.88rem; gap: 0.5rem; }
+}

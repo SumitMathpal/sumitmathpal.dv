@@ -248,3 +248,13 @@ a:hover { color: #60A5FA; }
   .section { padding: 5rem 1.5rem; }
   .rule    { margin: 0 1.5rem; }
 }
+
+@media (max-width: 480px) {
+  .section { padding: 4.5rem 1.25rem; }
+  .rule    { margin: 0 1.25rem; }
+}
+
+@media (max-width: 350px) {
+  .section { padding: 4rem 0.75rem; }
+  .rule    { margin: 0 0.75rem; }
+}
