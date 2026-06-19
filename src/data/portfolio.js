@@ -137,20 +137,18 @@ export const projects = [
     linkLabel: "GitHub ↗",
   },
   {
-   index: "04",
-    stack: "Machine Learing · Streamlit · Data Processing",
+    index: "04",
+    stack: "Machine Learning · Streamlit · Data Processing",
     name: "Invoice Intelligent System",
-    color: "Blue",
+    color: "blue",
     points: [
       "Architected an AI-powered invoice intelligence system for automated freight cost prediction and anomaly detection",
       "Developed machine learning models using Scikit-learn to classify invoices as safe or suspicious based on transactional patterns",
       "Implemented data preprocessing and feature scaling pipelines to improve model accuracy and consistency",
     ],
-    link: "https://github.com/SumitMathpal/Invoice-Intelligent-System",
-    linkLabel: "GitHub ↗",
-    link:"https://invoice-intelligent-system-u5hhf7miswhaoamz3biyze.streamlit.app/",
-    linkLabel:"Live Demo ↗"
-
+    link: "https://invoice-intelligent-system-u5hhf7miswhaoamz3biyze.streamlit.app/",
+    linkLabel: "Live Demo ↗",
+    github: "https://github.com/SumitMathpal/Invoice-Intelligent-System"
   }
 ];
 

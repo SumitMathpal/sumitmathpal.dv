@@ -10,6 +10,7 @@ import Experience from "./components/Experience";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Footer from "./components/Footer";
+import StarsBackground from "./components/StarsBackground";
 
 export default function App() {
   useGsapReveal();
@@ -17,6 +18,7 @@ export default function App() {
   return (
     <>
       {/* Global overlays */}
+      <StarsBackground />
       <ScrollProgress />
       <CursorGlow />
       <SideNav />

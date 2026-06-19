@@ -158,6 +158,7 @@
   opacity: 0;
   transform: translateY(20px);
   animation: slideUpIn 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  animation-delay: calc(var(--i) * 0.08s);
   letter-spacing: -0.02em;
   padding: 0.2rem 1rem;
   border-radius: 6px;

@@ -220,6 +220,11 @@
 }
 
 @media (max-width: 480px) {
+  .profileHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
   .contactBlock {
     padding: 1.2rem 1rem;
     margin-top: 1rem;
